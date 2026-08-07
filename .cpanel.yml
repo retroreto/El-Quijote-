@@ -2,4 +2,4 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/elquijot/public_html/
-    - /bin/rsync -rav --exclude='.git' ./ $DEPLOYPATH
+    - /bin/rsync -rav --exclude='.git' dist/ $DEPLOYPATH
