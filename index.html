@@ -1,0 +1,1360 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>El Quijote Grupo Editorial | Este Año Será Mundial</title>
+  <meta name="description" content="Sitio web oficial de El Quijote Grupo Editorial. El hogar de las nuevas voces de la literatura hispana. Publicación, distribución y gestión editorial independiente de alto nivel." />
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome 6 CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'quijote-cream': '#FAF8F5',
+            'quijote-paper': '#F3EEE8',
+            'quijote-dark': '#121212',
+            'quijote-card': '#1C1C1C',
+            'quijote-gold': '#D4AF37',
+            'quijote-gold-hover': '#C29F2B',
+            'quijote-wine': '#6B1D2F',
+            'quijote-wine-hover': '#521523',
+            'quijote-muted': '#7A7570',
+            'quijote-border': '#E5DFD5'
+          },
+          fontFamily: {
+            serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+            display: ['"Playfair Display"', 'Georgia', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          boxShadow: {
+            'editorial': '0 20px 40px -15px rgba(107, 29, 47, 0.08), 0 10px 20px -10px rgba(0, 0, 0, 0.04)',
+            'gold-glow': '0 0 25px rgba(212, 175, 55, 0.25)',
+            'book-3d': '-10px 10px 25px -5px rgba(0, 0, 0, 0.25), -2px 0 5px rgba(0, 0, 0, 0.1)'
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #FAF8F5;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #D4AF37;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #6B1D2F;
+    }
+
+    /* Gold Gradient Text Effect */
+    .text-gold-gradient {
+      background: linear-gradient(135deg, #D4AF37 0%, #F3E5AB 50%, #B38F24 100%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* Wine Gradient Text Effect */
+    .text-wine-gradient {
+      background: linear-gradient(135deg, #6B1D2F 0%, #A32D47 50%, #D4AF37 100%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* Book Spine Effect */
+    .book-spine-shadow {
+      background: linear-gradient(90deg, rgba(0,0,0,0.3) 0%, rgba(255,255,255,0.15) 3%, rgba(0,0,0,0.05) 8%, rgba(0,0,0,0) 100%);
+    }
+
+    /* Capitular Drop Cap */
+    .drop-cap::first-letter {
+      font-family: 'Playfair Display', serif;
+      float: left;
+      font-size: 3.8rem;
+      line-height: 0.8;
+      padding-top: 4px;
+      padding-right: 12px;
+      padding-bottom: 2px;
+      color: #6B1D2F;
+      font-weight: 700;
+    }
+
+    /* Modal Animation */
+    .modal-backdrop {
+      transition: opacity 0.3s ease-in-out;
+    }
+    .modal-content {
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease-in-out;
+    }
+  </style>
+</head>
+
+<body class="bg-quijote-cream text-quijote-dark font-sans antialiased selection:bg-quijote-wine selection:text-white flex flex-col min-h-screen">
+
+  <!-- ========================================== -->
+  <!-- A) CABECERA / NAVIGATION                   -->
+  <!-- ========================================== -->
+  <header class="sticky top-0 z-40 bg-quijote-cream/90 backdrop-blur-md border-b border-quijote-gold/20 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Brand Logo -->
+      <a href="#inicio" id="nav-brand-logo" class="flex items-center gap-3 group">
+        <div class="w-11 h-11 rounded-full bg-quijote-dark text-quijote-gold flex items-center justify-center shadow-md border border-quijote-gold/40 group-hover:bg-quijote-wine group-hover:text-white transition-all duration-300">
+          <i class="fa-solid font-serif text-xl font-bold">Q</i>
+        </div>
+        <div class="flex flex-col">
+          <span class="font-display font-bold text-lg sm:text-xl tracking-tight text-quijote-dark group-hover:text-quijote-wine transition-colors">
+            El Quijote
+          </span>
+          <span class="text-[10px] sm:text-xs font-semibold tracking-[0.25em] text-quijote-gold uppercase -mt-1">
+            Grupo Editorial
+          </span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="hidden md:flex items-center gap-8 font-medium text-sm tracking-wide text-quijote-dark/80">
+        <a href="#inicio" class="hover:text-quijote-wine transition-colors py-1 border-b-2 border-transparent hover:border-quijote-gold">Inicio</a>
+        <a href="#catalogo" class="hover:text-quijote-wine transition-colors py-1 border-b-2 border-transparent hover:border-quijote-gold">Catálogo</a>
+        <a href="#autores" class="hover:text-quijote-wine transition-colors py-1 border-b-2 border-transparent hover:border-quijote-gold">Autores & Director</a>
+        <a href="#convocatoria" class="hover:text-quijote-wine transition-colors py-1 border-b-2 border-transparent hover:border-quijote-gold">Convocatoria</a>
+        <a href="#contacto" class="hover:text-quijote-wine transition-colors py-1 border-b-2 border-transparent hover:border-quijote-gold">Contacto</a>
+      </nav>
+
+      <!-- Action Button -->
+      <div class="hidden sm:flex items-center gap-4">
+        <a href="#convocatoria" id="btn-nav-publica" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-quijote-wine text-white text-xs sm:text-sm font-semibold tracking-wider uppercase hover:bg-quijote-wine-hover shadow-md hover:shadow-lg transition-all duration-300 border border-quijote-gold/30">
+          <i class="fa-solid fa-feather-pointed text-quijote-gold"></i>
+          <span>Publica tu Libro</span>
+        </a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button id="mobile-menu-toggle" aria-label="Abrir menú" class="md:hidden w-10 h-10 flex items-center justify-center text-quijote-dark hover:text-quijote-wine focus:outline-none">
+        <i class="fa-solid fa-bars text-xl" id="menu-icon-bars"></i>
+        <i class="fa-solid fa-xmark text-xl hidden" id="menu-icon-close"></i>
+      </button>
+    </div>
+
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-quijote-cream border-b border-quijote-gold/30 px-6 py-6 shadow-xl space-y-4">
+      <a href="#inicio" class="mobile-nav-link block font-display text-lg text-quijote-dark hover:text-quijote-wine">Inicio</a>
+      <a href="#catalogo" class="mobile-nav-link block font-display text-lg text-quijote-dark hover:text-quijote-wine">Catálogo de Obras</a>
+      <a href="#autores" class="mobile-nav-link block font-display text-lg text-quijote-dark hover:text-quijote-wine">Autores & Director</a>
+      <a href="#convocatoria" class="mobile-nav-link block font-display text-lg text-quijote-dark hover:text-quijote-wine">Convocatoria 2026</a>
+      <a href="#contacto" class="mobile-nav-link block font-display text-lg text-quijote-dark hover:text-quijote-wine">Contacto & Sedes</a>
+      <div class="pt-4 border-t border-quijote-border">
+        <a href="#convocatoria" class="mobile-nav-link block w-full text-center px-6 py-3 rounded-xl bg-quijote-wine text-white font-semibold text-sm uppercase tracking-wider">
+          <i class="fa-solid fa-feather-pointed text-quijote-gold mr-2"></i>
+          Publica tu Libro Con Nosotros
+        </a>
+      </div>
+    </div>
+  </header>
+
+
+  <!-- ========================================== -->
+  <!-- B) HÉROE PRINCIPAL (HERO SECTION)           -->
+  <!-- ========================================== -->
+  <section id="inicio" class="relative bg-quijote-dark text-white pt-16 pb-24 lg:pt-24 lg:pb-32 overflow-hidden">
+    <!-- Subtle Background Gold Grid Accent -->
+    <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#D4AF37_1px,transparent_1px)] [background-size:24px_24px] pointer-events-none"></div>
+    <div class="absolute -top-32 -right-32 w-96 h-96 bg-quijote-wine/30 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute -bottom-32 -left-32 w-96 h-96 bg-quijote-gold/15 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+        
+        <!-- Left Hero Text Content -->
+        <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+          
+          <!-- Badge -->
+          <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-quijote-gold/40 backdrop-blur-md">
+            <span class="w-2 h-2 rounded-full bg-quijote-gold animate-pulse"></span>
+            <span class="text-xs font-semibold tracking-widest text-quijote-gold uppercase">Sello Editorial Independiente • 2026</span>
+          </div>
+
+          <!-- Main Impact Slogan & Headline -->
+          <div class="space-y-3">
+            <h1 class="text-xs sm:text-sm font-bold tracking-[0.35em] text-quijote-gold uppercase">
+              SELLO EDITORIAL INTERNACIONAL
+            </h1>
+            <p class="font-display text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.08] text-white">
+              ESTE AÑO SERÁ <br/>
+              <span class="text-wine-gradient italic font-serif">MUNDIAL</span>
+            </p>
+          </div>
+
+          <p class="text-base sm:text-lg text-quijote-paper/85 max-w-2xl mx-auto lg:mx-0 font-sans leading-relaxed font-light">
+            El hogar de las nuevas voces que transforman la literatura hispana. En <strong class="text-quijote-gold font-normal">El Quijote Grupo Editorial</strong> no solo editamos libros; curamos legados literarios y conectamos autores visionarios con miles de lectores alrededor del mundo.
+          </p>
+
+          <!-- Dual Hero CTAs -->
+          <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+            <a href="#catalogo" id="btn-hero-catalogo" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl bg-quijote-wine text-white font-semibold text-sm tracking-wider uppercase hover:bg-quijote-wine-hover shadow-xl hover:shadow-2xl transition-all duration-300 border border-quijote-gold/30 group">
+              <span>Explorar Catálogo</span>
+              <i class="fa-solid fa-arrow-right text-quijote-gold group-hover:translate-x-1 transition-transform"></i>
+            </a>
+            
+            <a href="#convocatoria" id="btn-hero-convocatoria" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl bg-transparent text-quijote-gold font-semibold text-sm tracking-wider uppercase hover:bg-quijote-gold/10 border-2 border-quijote-gold transition-all duration-300">
+              <i class="fa-solid fa-paper-plane text-xs"></i>
+              <span>Enviar Manuscrito</span>
+            </a>
+          </div>
+
+          <!-- Trust Counters / Key Indicators -->
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-10 border-t border-white/10 text-left">
+            <div>
+              <p class="font-display text-2xl sm:text-3xl font-bold text-quijote-gold">10 / 15</p>
+              <p class="text-xs text-white/60 font-sans mt-0.5">Obras Publicadas (2026)</p>
+            </div>
+            <div>
+              <p class="font-display text-2xl sm:text-3xl font-bold text-white">+12.000</p>
+              <p class="text-xs text-white/60 font-sans mt-0.5">Lectores Alcanzados</p>
+            </div>
+            <div>
+              <p class="font-display text-2xl sm:text-3xl font-bold text-white">100%</p>
+              <p class="text-xs text-white/60 font-sans mt-0.5">Acompañamiento 1 a 1</p>
+            </div>
+            <div>
+              <p class="font-display text-2xl sm:text-3xl font-bold text-quijote-gold">3</p>
+              <p class="text-xs text-white/60 font-sans mt-0.5">Sedes (ES • CO • MX)</p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right Hero Visual Collage -->
+        <div class="lg:col-span-5 relative flex justify-center">
+          <div class="relative w-full max-w-sm sm:max-w-md aspect-[4/5] rounded-2xl bg-gradient-to-b from-quijote-card to-quijote-dark p-6 border border-quijote-gold/30 shadow-book-3d flex flex-col justify-between overflow-hidden group">
+            
+            <!-- Book Cover Showcase Showcase Card in Hero -->
+            <div class="absolute inset-0 opacity-20 bg-cover bg-center" style="background-image: url('/src/assets/images/book_fenixidad_1786123856536.jpg');"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-quijote-dark via-quijote-dark/80 to-transparent"></div>
+
+            <div class="relative z-10 flex justify-between items-start">
+              <span class="px-3 py-1 rounded-full bg-quijote-gold/20 text-quijote-gold border border-quijote-gold/40 text-xs font-semibold tracking-wider uppercase">
+                Última Novedad
+              </span>
+              <span class="text-xs text-white/60 font-serif italic">Edición Limitada</span>
+            </div>
+
+            <!-- Featured Book Image Preview in Hero -->
+            <div class="relative z-10 my-4 flex justify-center">
+              <img src="/src/assets/images/book_fenixidad_1786123856536.jpg" alt="La Fenixidad" class="w-44 sm:w-52 aspect-[3/4] object-cover rounded-md shadow-2xl border border-quijote-gold/40 transform group-hover:scale-105 transition-transform duration-500" referrerPolicy="no-referrer" />
+            </div>
+
+            <div class="relative z-10 text-center space-y-2">
+              <h3 class="font-display text-2xl font-bold text-white tracking-wide">La Fenixidad</h3>
+              <p class="text-xs text-quijote-gold uppercase tracking-widest font-semibold">Elena Valenzuela</p>
+              <p class="text-xs text-white/70 line-clamp-2 italic font-serif">"En las cenizas de un pueblo olvidado florece una leyenda inmortal de renacer interior..."</p>
+              <button onclick="openFragmentModal('fenixidad')" class="inline-flex items-center gap-2 text-xs font-bold text-quijote-gold hover:text-white uppercase tracking-wider pt-1 transition-colors">
+                <i class="fa-solid fa-book-open"></i>
+                <span>Leer Fragmento Exclusivo</span>
+              </button>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========================================== -->
+  <!-- C) CATÁLOGO DE OBRAS                      -->
+  <!-- ========================================== -->
+  <section id="catalogo" class="py-20 lg:py-28 bg-quijote-cream relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto space-y-4 mb-14">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-quijote-wine/10 border border-quijote-wine/20">
+          <i class="fa-solid fa-bookmark text-quijote-wine text-xs"></i>
+          <span class="text-xs font-semibold tracking-widest text-quijote-wine uppercase">Publicaciones Oficiales</span>
+        </div>
+        <h2 class="font-display text-3xl sm:text-5xl font-extrabold text-quijote-dark tracking-tight">
+          Catálogo de Obras Destacadas
+        </h2>
+        <p class="text-quijote-muted text-base sm:text-lg font-sans">
+          Descubre las historias, ensayos y biografías que están marcando tendencia en el panorama editorial hispanohablante.
+        </p>
+
+        <!-- Genre Filter Badges -->
+        <div class="flex flex-wrap items-center justify-center gap-2 pt-4" id="catalog-filters">
+          <button data-filter="all" class="filter-btn active px-4 py-2 rounded-full text-xs font-semibold tracking-wider uppercase bg-quijote-wine text-white transition-all shadow-sm">
+            Todos
+          </button>
+          <button data-filter="desarrollo" class="filter-btn px-4 py-2 rounded-full text-xs font-semibold tracking-wider uppercase bg-white text-quijote-dark/80 hover:bg-quijote-wine/10 border border-quijote-border transition-all">
+            Ensayo & Desarrollo
+          </button>
+          <button data-filter="comedia" class="filter-btn px-4 py-2 rounded-full text-xs font-semibold tracking-wider uppercase bg-white text-quijote-dark/80 hover:bg-quijote-wine/10 border border-quijote-border transition-all">
+            Comedia & Humor
+          </button>
+          <button data-filter="ficcion" class="filter-btn px-4 py-2 rounded-full text-xs font-semibold tracking-wider uppercase bg-white text-quijote-dark/80 hover:bg-quijote-wine/10 border border-quijote-border transition-all">
+            Ficción & Narrativa
+          </button>
+          <button data-filter="misterio" class="filter-btn px-4 py-2 rounded-full text-xs font-semibold tracking-wider uppercase bg-white text-quijote-dark/80 hover:bg-quijote-wine/10 border border-quijote-border transition-all">
+            Thriller & Misterio
+          </button>
+        </div>
+      </div>
+
+      <!-- Book Catalog Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8" id="book-grid">
+
+        <!-- CARD 1: 100 Pequeñas Grandes Lecciones -->
+        <div class="book-card group bg-white rounded-2xl p-5 border border-quijote-border hover:border-quijote-gold/60 shadow-editorial hover:shadow-2xl transition-all duration-300 flex flex-col justify-between" data-category="desarrollo">
+          <div>
+            <!-- Book Cover Container -->
+            <div class="relative aspect-[3/4] w-full rounded-xl overflow-hidden bg-quijote-paper mb-5 shadow-book-3d group-hover:-translate-y-2 transition-transform duration-300">
+              <img src="/src/assets/images/book_lecciones_1786123833640.jpg" alt="100 Pequeñas Grandes Lecciones" class="w-full h-full object-cover" referrerPolicy="no-referrer" />
+              <div class="absolute top-3 left-3">
+                <span class="px-2.5 py-1 rounded-md bg-quijote-wine/90 backdrop-blur-md text-white text-[10px] font-bold tracking-wider uppercase">
+                  Desarrollo Personal
+                </span>
+              </div>
+            </div>
+
+            <!-- Title & Metadata -->
+            <div class="space-y-1 mb-3">
+              <div class="flex items-center justify-between text-xs text-quijote-gold font-semibold">
+                <span>N° 1 EN VENTAS</span>
+                <span class="flex items-center gap-1"><i class="fa-solid fa-star text-amber-500"></i> 5.0 (48)</span>
+              </div>
+              <h3 class="font-display text-xl font-bold text-quijote-dark group-hover:text-quijote-wine transition-colors leading-snug">
+                100 Pequeñas Grandes Lecciones
+              </h3>
+              <p class="text-xs text-quijote-muted font-medium uppercase tracking-wider">Josben Torres & Co-autores</p>
+            </div>
+
+            <!-- Synopsis -->
+            <p class="text-xs text-quijote-dark/75 line-clamp-3 mb-4 font-sans leading-relaxed">
+              Un compendio inspirador de reflexiones diarias, hábitos de liderazgo y sabiduría práctica para afrontar la vida moderna con determinación, foco y propósito.
+            </p>
+          </div>
+
+          <!-- Price & Actions -->
+          <div class="pt-4 border-t border-quijote-border/60 space-y-3">
+            <div class="flex items-center justify-between text-xs">
+              <span class="text-quijote-muted">Disponible en:</span>
+              <span class="font-bold text-quijote-dark">$18.99 USD <span class="text-[10px] text-quijote-muted font-normal">(Físico)</span></span>
+            </div>
+
+            <div class="grid grid-cols-2 gap-2">
+              <button onclick="openFragmentModal('lecciones')" class="w-full py-2.5 px-3 rounded-lg bg-quijote-paper text-quijote-dark hover:bg-quijote-gold hover:text-white font-semibold text-xs transition-colors flex items-center justify-center gap-1.5">
+                <i class="fa-solid fa-book-open text-xs"></i>
+                <span>Fragmento</span>
+              </button>
+              <button onclick="openBuyModal('100 Pequeñas Grandes Lecciones', '$18.99 USD')" class="w-full py-2.5 px-3 rounded-lg bg-quijote-wine text-white hover:bg-quijote-wine-hover font-semibold text-xs transition-colors flex items-center justify-center gap-1.5 shadow-sm">
+                <i class="fa-solid fa-cart-shopping text-xs"></i>
+                <span>Comprar</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 2: Quiero ser comediante -->
+        <div class="book-card group bg-white rounded-2xl p-5 border border-quijote-border hover:border-quijote-gold/60 shadow-editorial hover:shadow-2xl transition-all duration-300 flex flex-col justify-between" data-category="comedia">
+          <div>
+            <!-- Book Cover Container -->
+            <div class="relative aspect-[3/4] w-full rounded-xl overflow-hidden bg-quijote-paper mb-5 shadow-book-3d group-hover:-translate-y-2 transition-transform duration-300">
+              <img src="/src/assets/images/book_comediante_1786123845641.jpg" alt="Quiero ser comediante" class="w-full h-full object-cover" referrerPolicy="no-referrer" />
+              <div class="absolute top-3 left-3">
+                <span class="px-2.5 py-1 rounded-md bg-quijote-dark/90 backdrop-blur-md text-quijote-gold text-[10px] font-bold tracking-wider uppercase">
+                  Comedia / Humor
+                </span>
+              </div>
+            </div>
+
+            <!-- Title & Metadata -->
+            <div class="space-y-1 mb-3">
+              <div class="flex items-center justify-between text-xs text-quijote-gold font-semibold">
+                <span>DESTACADO</span>
+                <span class="flex items-center gap-1"><i class="fa-solid fa-star text-amber-500"></i> 4.9 (36)</span>
+              </div>
+              <h3 class="font-display text-xl font-bold text-quijote-dark group-hover:text-quijote-wine transition-colors leading-snug">
+                Quiero ser comediante
+              </h3>
+              <p class="text-xs text-quijote-muted font-medium uppercase tracking-wider">Carlos "El Guasón" M.</p>
+            </div>
+
+            <!-- Synopsis -->
+            <p class="text-xs text-quijote-dark/75 line-clamp-3 mb-4 font-sans leading-relaxed">
+              De los escenarios locales al estrellato del stand-up. Una mirada ácida, humana y profundamente divertida sobre el arte de hacer reír y sobrevivir en la comedia.
+            </p>
+          </div>
+
+          <!-- Price & Actions -->
+          <div class="pt-4 border-t border-quijote-border/60 space-y-3">
+            <div class="flex items-center justify-between text-xs">
+              <span class="text-quijote-muted">Disponible en:</span>
+              <span class="font-bold text-quijote-dark">$16.50 USD <span class="text-[10px] text-quijote-muted font-normal">(Físico)</span></span>
+            </div>
+
+            <div class="grid grid-cols-2 gap-2">
+              <button onclick="openFragmentModal('comediante')" class="w-full py-2.5 px-3 rounded-lg bg-quijote-paper text-quijote-dark hover:bg-quijote-gold hover:text-white font-semibold text-xs transition-colors flex items-center justify-center gap-1.5">
+                <i class="fa-solid fa-book-open text-xs"></i>
+                <span>Fragmento</span>
+              </button>
+              <button onclick="openBuyModal('Quiero ser comediante', '$16.50 USD')" class="w-full py-2.5 px-3 rounded-lg bg-quijote-wine text-white hover:bg-quijote-wine-hover font-semibold text-xs transition-colors flex items-center justify-center gap-1.5 shadow-sm">
+                <i class="fa-solid fa-cart-shopping text-xs"></i>
+                <span>Comprar</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 3: La Fenixidad -->
+        <div class="book-card group bg-white rounded-2xl p-5 border border-quijote-border hover:border-quijote-gold/60 shadow-editorial hover:shadow-2xl transition-all duration-300 flex flex-col justify-between" data-category="ficcion">
+          <div>
+            <!-- Book Cover Container -->
+            <div class="relative aspect-[3/4] w-full rounded-xl overflow-hidden bg-quijote-paper mb-5 shadow-book-3d group-hover:-translate-y-2 transition-transform duration-300">
+              <img src="/src/assets/images/book_fenixidad_1786123856536.jpg" alt="La Fenixidad" class="w-full h-full object-cover" referrerPolicy="no-referrer" />
+              <div class="absolute top-3 left-3">
+                <span class="px-2.5 py-1 rounded-md bg-amber-700/90 backdrop-blur-md text-white text-[10px] font-bold tracking-wider uppercase">
+                  Ficción / Narrativa
+                </span>
+              </div>
+            </div>
+
+            <!-- Title & Metadata -->
+            <div class="space-y-1 mb-3">
+              <div class="flex items-center justify-between text-xs text-quijote-gold font-semibold">
+                <span>NOVEDAD 2026</span>
+                <span class="flex items-center gap-1"><i class="fa-solid fa-star text-amber-500"></i> 4.8 (52)</span>
+              </div>
+              <h3 class="font-display text-xl font-bold text-quijote-dark group-hover:text-quijote-wine transition-colors leading-snug">
+                La Fenixidad
+              </h3>
+              <p class="text-xs text-quijote-muted font-medium uppercase tracking-wider">Elena Valenzuela</p>
+            </div>
+
+            <!-- Synopsis -->
+            <p class="text-xs text-quijote-dark/75 line-clamp-3 mb-4 font-sans leading-relaxed">
+              En las cenizas de un pueblo olvidado florece una leyenda inmortal. Una narrativa deslumbrante sobre la resiliencia humana, la herencia y el renacer interior.
+            </p>
+          </div>
+
+          <!-- Price & Actions -->
+          <div class="pt-4 border-t border-quijote-border/60 space-y-3">
+            <div class="flex items-center justify-between text-xs">
+              <span class="text-quijote-muted">Disponible en:</span>
+              <span class="font-bold text-quijote-dark">$19.90 USD <span class="text-[10px] text-quijote-muted font-normal">(Físico)</span></span>
+            </div>
+
+            <div class="grid grid-cols-2 gap-2">
+              <button onclick="openFragmentModal('fenixidad')" class="w-full py-2.5 px-3 rounded-lg bg-quijote-paper text-quijote-dark hover:bg-quijote-gold hover:text-white font-semibold text-xs transition-colors flex items-center justify-center gap-1.5">
+                <i class="fa-solid fa-book-open text-xs"></i>
+                <span>Fragmento</span>
+              </button>
+              <button onclick="openBuyModal('La Fenixidad', '$19.90 USD')" class="w-full py-2.5 px-3 rounded-lg bg-quijote-wine text-white hover:bg-quijote-wine-hover font-semibold text-xs transition-colors flex items-center justify-center gap-1.5 shadow-sm">
+                <i class="fa-solid fa-cart-shopping text-xs"></i>
+                <span>Comprar</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 4: Déjà vu -->
+        <div class="book-card group bg-white rounded-2xl p-5 border border-quijote-border hover:border-quijote-gold/60 shadow-editorial hover:shadow-2xl transition-all duration-300 flex flex-col justify-between" data-category="misterio">
+          <div>
+            <!-- Book Cover Container -->
+            <div class="relative aspect-[3/4] w-full rounded-xl overflow-hidden bg-quijote-paper mb-5 shadow-book-3d group-hover:-translate-y-2 transition-transform duration-300">
+              <img src="/src/assets/images/book_dejavu_1786123868140.jpg" alt="Déjà vu" class="w-full h-full object-cover" referrerPolicy="no-referrer" />
+              <div class="absolute top-3 left-3">
+                <span class="px-2.5 py-1 rounded-md bg-stone-800/90 backdrop-blur-md text-quijote-gold text-[10px] font-bold tracking-wider uppercase">
+                  Thriller / Misterio
+                </span>
+              </div>
+            </div>
+
+            <!-- Title & Metadata -->
+            <div class="space-y-1 mb-3">
+              <div class="flex items-center justify-between text-xs text-quijote-gold font-semibold">
+                <span>MISTERIO</span>
+                <span class="flex items-center gap-1"><i class="fa-solid fa-star text-amber-500"></i> 4.9 (41)</span>
+              </div>
+              <h3 class="font-display text-xl font-bold text-quijote-dark group-hover:text-quijote-wine transition-colors leading-snug">
+                Déjà vu
+              </h3>
+              <p class="text-xs text-quijote-muted font-medium uppercase tracking-wider">Ricardo Sánches</p>
+            </div>
+
+            <!-- Synopsis -->
+            <p class="text-xs text-quijote-dark/75 line-clamp-3 mb-4 font-sans leading-relaxed">
+              Cuando los recuerdos del futuro interfieren con el presente, un detective debe descifrar un crimen que aún no ha ocurrido. Un laberinto temporal atrapante.
+            </p>
+          </div>
+
+          <!-- Price & Actions -->
+          <div class="pt-4 border-t border-quijote-border/60 space-y-3">
+            <div class="flex items-center justify-between text-xs">
+              <span class="text-quijote-muted">Disponible en:</span>
+              <span class="font-bold text-quijote-dark">$17.80 USD <span class="text-[10px] text-quijote-muted font-normal">(Físico)</span></span>
+            </div>
+
+            <div class="grid grid-cols-2 gap-2">
+              <button onclick="openFragmentModal('dejavu')" class="w-full py-2.5 px-3 rounded-lg bg-quijote-paper text-quijote-dark hover:bg-quijote-gold hover:text-white font-semibold text-xs transition-colors flex items-center justify-center gap-1.5">
+                <i class="fa-solid fa-book-open text-xs"></i>
+                <span>Fragmento</span>
+              </button>
+              <button onclick="openBuyModal('Déjà vu', '$17.80 USD')" class="w-full py-2.5 px-3 rounded-lg bg-quijote-wine text-white hover:bg-quijote-wine-hover font-semibold text-xs transition-colors flex items-center justify-center gap-1.5 shadow-sm">
+                <i class="fa-solid fa-cart-shopping text-xs"></i>
+                <span>Comprar</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ========================================== -->
+  <!-- D) AUTORES Y FUNDADOR                      -->
+  <!-- ========================================== -->
+  <section id="autores" class="py-20 lg:py-28 bg-quijote-paper/60 border-y border-quijote-border relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto space-y-3 mb-16">
+        <span class="text-xs font-bold tracking-[0.25em] text-quijote-wine uppercase">Visión Editorial</span>
+        <h2 class="font-display text-3xl sm:text-5xl font-extrabold text-quijote-dark">
+          Liderazgo y Comunidad de Autores
+        </h2>
+        <p class="text-quijote-muted text-base font-sans">
+          Detrás de cada gran libro hay una visión apasionada y un equipo comprometido con la excelencia literaria.
+        </p>
+      </div>
+
+      <!-- Founder Profile Spotlight -->
+      <div class="bg-white rounded-3xl p-8 sm:p-12 border border-quijote-border shadow-editorial mb-16">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+          
+          <!-- Founder Image -->
+          <div class="lg:col-span-4 flex justify-center">
+            <div class="relative group w-64 h-64 sm:w-72 sm:h-72">
+              <div class="absolute inset-0 rounded-2xl bg-quijote-gold rotate-3 group-hover:rotate-6 transition-transform"></div>
+              <img src="/src/assets/images/josben_torres_1786123882228.jpg" alt="Josben Torres - Fundador" class="relative z-10 w-full h-full object-cover rounded-2xl shadow-xl border-2 border-white" referrerPolicy="no-referrer" />
+              <div class="absolute -bottom-4 -right-4 z-20 bg-quijote-dark text-quijote-gold px-4 py-2 rounded-xl text-xs font-bold shadow-lg border border-quijote-gold/30">
+                Fundador & Director
+              </div>
+            </div>
+          </div>
+
+          <!-- Founder Bio & Vision Statement -->
+          <div class="lg:col-span-8 space-y-6">
+            <div class="space-y-1">
+              <span class="text-xs font-bold text-quijote-gold uppercase tracking-widest">Fundador y Director Editorial</span>
+              <h3 class="font-display text-3xl sm:text-4xl font-bold text-quijote-dark">Josben Torres</h3>
+            </div>
+
+            <blockquote class="font-serif italic text-xl sm:text-2xl text-quijote-wine leading-relaxed border-l-4 border-quijote-gold pl-6 py-1">
+              "En El Quijote Grupo Editorial no vendemos únicamente papel con tinta: construimos la carrera sostenible de autores con proyección mundial. Nuestro compromiso es acompañarte en cada paso, desde la corrección de estilo hasta la distribución internacional."
+            </blockquote>
+
+            <p class="text-sm sm:text-base text-quijote-dark/80 leading-relaxed">
+              Con más de una década de trayectoria en la industria editorial y la gestión cultural, Josben Torres concibió este sello independiente con un objetivo claro: romper las barreras tradicionales y ofrecer a los nuevos talentos una plataforma ética, transparente y global.
+            </p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4 border-t border-quijote-border text-xs">
+              <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-full bg-quijote-wine/10 text-quijote-wine flex items-center justify-center font-bold">
+                  <i class="fa-solid fa-check"></i>
+                </div>
+                <span>Corrección & Maquetación Profesional</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-full bg-quijote-wine/10 text-quijote-wine flex items-center justify-center font-bold">
+                  <i class="fa-solid fa-check"></i>
+                </div>
+                <span>Distribución Física y Digital</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-full bg-quijote-wine/10 text-quijote-wine flex items-center justify-center font-bold">
+                  <i class="fa-solid fa-check"></i>
+                </div>
+                <span>Regalías Claras y Puntuales</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Prebuilt Slots for Upcoming Authors -->
+      <div class="space-y-6">
+        <h3 class="font-display text-2xl font-bold text-quijote-dark text-center sm:text-left">
+          Próximas Incorporaciones al Catálogo
+        </h3>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          
+          <!-- Slot 1: Open Call Slot -->
+          <div class="bg-gradient-to-br from-quijote-dark to-quijote-card rounded-2xl p-6 text-white border border-quijote-gold/40 shadow-lg flex flex-col justify-between relative overflow-hidden group">
+            <div class="absolute -right-10 -bottom-10 opacity-10 text-quijote-gold text-9xl font-serif pointer-events-none">Q</div>
+            <div class="space-y-3 relative z-10">
+              <span class="px-3 py-1 rounded-full bg-quijote-gold/20 text-quijote-gold text-[10px] font-bold tracking-wider uppercase border border-quijote-gold/30">
+                ¡Tu Nombre Aquí!
+              </span>
+              <h4 class="font-display text-xl font-bold">Próximo Autor #11</h4>
+              <p class="text-xs text-white/70 leading-relaxed font-sans">
+                Reservado para el manuscrito ganador de la Convocatoria 2026. Tu obra puede convertirse en nuestro próximo éxito editorial.
+              </p>
+            </div>
+            <div class="pt-6 relative z-10">
+              <a href="#convocatoria" class="inline-flex items-center gap-2 text-xs font-bold text-quijote-gold hover:text-white uppercase tracking-wider group-hover:translate-x-1 transition-all">
+                <span>Postular Mi Obra</span>
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Slot 2: Author in Editing -->
+          <div class="bg-white rounded-2xl p-6 border border-quijote-border shadow-sm flex flex-col justify-between">
+            <div class="space-y-3">
+              <span class="px-3 py-1 rounded-full bg-amber-100 text-amber-800 text-[10px] font-bold tracking-wider uppercase">
+                En Corrección de Estilo
+              </span>
+              <h4 class="font-display text-xl font-bold text-quijote-dark">Obra de Ensayo e Innovación</h4>
+              <p class="text-xs text-quijote-muted leading-relaxed font-sans">
+                Lanzamiento programado para el tercer trimestre de 2026. Una reflexión profunda sobre el futuro de las startups en Iberoamérica.
+              </p>
+            </div>
+            <div class="pt-6 text-xs text-quijote-wine font-semibold flex items-center gap-2">
+              <i class="fa-solid fa-hourglass-half"></i>
+              <span>Lanzamiento Sep 2026</span>
+            </div>
+          </div>
+
+          <!-- Slot 3: Author in Design -->
+          <div class="bg-white rounded-2xl p-6 border border-quijote-border shadow-sm flex flex-col justify-between">
+            <div class="space-y-3">
+              <span class="px-3 py-1 rounded-full bg-purple-100 text-purple-800 text-[10px] font-bold tracking-wider uppercase">
+                En Diseñador & Maquetación
+              </span>
+              <h4 class="font-display text-xl font-bold text-quijote-dark">Antología Poética Contemporánea</h4>
+              <p class="text-xs text-quijote-muted leading-relaxed font-sans">
+                Compilación exclusiva con versos de 5 jóvenes líricos de España, Colombia y México.
+              </p>
+            </div>
+            <div class="pt-6 text-xs text-quijote-wine font-semibold flex items-center gap-2">
+              <i class="fa-solid fa-palette"></i>
+              <span>Lanzamiento Nov 2026</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ========================================== -->
+  <!-- E) CONVOCATORIA DE MANUSCRITOS             -->
+  <!-- ========================================== -->
+  <section id="convocatoria" class="py-20 lg:py-28 bg-quijote-dark text-white relative overflow-hidden">
+    <!-- Subtle background accents -->
+    <div class="absolute top-0 right-0 w-80 h-80 bg-quijote-wine/20 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      
+      <!-- Section Title & Meta Progress Bar -->
+      <div class="max-w-3xl mx-auto text-center space-y-6 mb-16">
+        <span class="px-4 py-1.5 rounded-full bg-quijote-gold/10 text-quijote-gold border border-quijote-gold/30 text-xs font-bold tracking-widest uppercase">
+          Convocatoria Abierta 2026
+        </span>
+        <h2 class="font-display text-3xl sm:text-5xl font-extrabold tracking-tight">
+          Publica Tu Libro Con Nosotros
+        </h2>
+        <p class="text-quijote-paper/80 text-base sm:text-lg font-sans">
+          Buscamos manuscritos inéditos de alto valor literario, humor, ensayo o desarrollo personal. Revisa los lineamientos y envía tu obra directamente a nuestro comité de lectura.
+        </p>
+
+        <!-- VISUAL PROGRESS BAR FOR THE 15 BOOKS GOAL -->
+        <div class="bg-quijote-card/90 rounded-2xl p-6 border border-quijote-gold/30 shadow-2xl text-left space-y-4">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+            <div>
+              <p class="text-xs font-bold text-quijote-gold uppercase tracking-wider">Meta Anual 2026</p>
+              <h3 class="font-display text-2xl font-bold text-white">10 de 15 Libros Publicados</h3>
+            </div>
+            <span class="px-3 py-1 rounded-full bg-quijote-wine text-white text-xs font-bold border border-quijote-gold/40">
+              ¡Quedan sólo 5 cupos!
+            </span>
+          </div>
+
+          <!-- Progress Bar Element -->
+          <div class="space-y-2">
+            <div class="w-full bg-white/10 h-4 rounded-full overflow-hidden p-0.5 border border-quijote-gold/30 relative">
+              <div class="bg-gradient-to-r from-quijote-wine via-quijote-gold to-amber-300 h-full rounded-full transition-all duration-1000 shadow-gold-glow" style="width: 66.6%;"></div>
+            </div>
+            <div class="flex justify-between text-[11px] text-white/60 font-sans">
+              <span>0 Obras</span>
+              <span class="text-quijote-gold font-bold">10 Publicadas (66.6%)</span>
+              <span>15 Obras Meta</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+        
+        <!-- Left: Guidelines & Requirements -->
+        <div class="lg:col-span-5 space-y-6">
+          <div class="bg-quijote-card/80 rounded-2xl p-6 sm:p-8 border border-white/10 space-y-6">
+            <h3 class="font-display text-xl font-bold text-quijote-gold flex items-center gap-2">
+              <i class="fa-solid fa-clipboard-check text-base"></i>
+              <span>Lineamientos de Recepción</span>
+            </h3>
+
+            <ul class="space-y-4 text-xs sm:text-sm text-quijote-paper/85">
+              <li class="flex items-start gap-3">
+                <i class="fa-solid fa-file-word text-quijote-gold mt-1"></i>
+                <span><strong>Formatos aceptados:</strong> Documentos de Word (.docx) o PDF con tipografía legible y doble espacio.</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <i class="fa-solid fa-font text-quijote-gold mt-1"></i>
+                <span><strong>Extensión mínima:</strong> 15.000 palabras para narrativa y ensayo; 40 poemas para colecciones poéticas.</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <i class="fa-solid fa-layer-group text-quijote-gold mt-1"></i>
+                <span><strong>Géneros prioritarios:</strong> Ensayo contemporáneo, Desarrollo Personal, Comedia & Stand-up, Ficción y Poesía.</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <i class="fa-solid fa-clock text-quijote-gold mt-1"></i>
+                <span><strong>Tiempo de dictamen:</strong> Máximo 14 días hábiles. Todos los manuscritos reciben retroalimentación escrita.</span>
+              </li>
+            </ul>
+
+            <div class="p-4 rounded-xl bg-quijote-wine/20 border border-quijote-wine/40 text-xs text-white/90">
+              <p class="font-semibold text-quijote-gold mb-1">Garantía de Derechos de Autor</p>
+              <p class="leading-relaxed">Tu propiedad intelectual permanece 100% protegida. No requerimos cesión exclusiva durante la fase de evaluación.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Manuscript Interactive Form -->
+        <div class="lg:col-span-7">
+          <form id="manuscript-form" onsubmit="handleManuscriptSubmit(event)" class="bg-white text-quijote-dark rounded-3xl p-6 sm:p-10 border border-quijote-border shadow-2xl space-y-6">
+            
+            <div>
+              <h3 class="font-display text-2xl font-bold text-quijote-dark">Formulario de Postulación</h3>
+              <p class="text-xs text-quijote-muted">Completa la información requerida para que el comité evalúe tu obra.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              
+              <!-- Author Name -->
+              <div>
+                <label for="ms-author" class="block text-xs font-bold uppercase tracking-wider text-quijote-dark mb-1">
+                  Nombre Completo / Seudónimo *
+                </label>
+                <input type="text" id="ms-author" required placeholder="Ej. Maria Delgado" class="w-full px-4 py-3 rounded-xl bg-quijote-cream border border-quijote-border focus:border-quijote-wine focus:ring-1 focus:ring-quijote-wine outline-none text-sm transition-all" />
+              </div>
+
+              <!-- Email -->
+              <div>
+                <label for="ms-email" class="block text-xs font-bold uppercase tracking-wider text-quijote-dark mb-1">
+                  Correo Electrónico *
+                </label>
+                <input type="email" id="ms-email" required placeholder="ejemplo@correo.com" class="w-full px-4 py-3 rounded-xl bg-quijote-cream border border-quijote-border focus:border-quijote-wine focus:ring-1 focus:ring-quijote-wine outline-none text-sm transition-all" />
+              </div>
+
+              <!-- WhatsApp -->
+              <div>
+                <label for="ms-phone" class="block text-xs font-bold uppercase tracking-wider text-quijote-dark mb-1">
+                  WhatsApp (con código de país) *
+                </label>
+                <input type="tel" id="ms-phone" required placeholder="+34 600 000 000" class="w-full px-4 py-3 rounded-xl bg-quijote-cream border border-quijote-border focus:border-quijote-wine focus:ring-1 focus:ring-quijote-wine outline-none text-sm transition-all" />
+              </div>
+
+              <!-- Book Title & Genre -->
+              <div>
+                <label for="ms-title" class="block text-xs font-bold uppercase tracking-wider text-quijote-dark mb-1">
+                  Título de la Obra *
+                </label>
+                <input type="text" id="ms-title" required placeholder="Ej. La sombra del viento" class="w-full px-4 py-3 rounded-xl bg-quijote-cream border border-quijote-border focus:border-quijote-wine focus:ring-1 focus:ring-quijote-wine outline-none text-sm transition-all" />
+              </div>
+
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label for="ms-genre" class="block text-xs font-bold uppercase tracking-wider text-quijote-dark mb-1">
+                  Género Literario *
+                </label>
+                <select id="ms-genre" required class="w-full px-4 py-3 rounded-xl bg-quijote-cream border border-quijote-border focus:border-quijote-wine focus:ring-1 focus:ring-quijote-wine outline-none text-sm transition-all">
+                  <option value="">Selecciona un género</option>
+                  <option value="Ensayo & Filosofía">Ensayo & Filosofía</option>
+                  <option value="Desarrollo Personal">Desarrollo Personal / Liderazgo</option>
+                  <option value="Comedia & Stand-up">Comedia & Stand-up</option>
+                  <option value="Ficción & Novela">Ficción & Novela</option>
+                  <option value="Poesía">Poesía & Antología</option>
+                  <option value="Otro">Otro</option>
+                </select>
+              </div>
+
+              <!-- Manuscript File Link -->
+              <div>
+                <label for="ms-link" class="block text-xs font-bold uppercase tracking-wider text-quijote-dark mb-1">
+                  Enlace al Manuscrito (Drive / Dropbox) *
+                </label>
+                <input type="url" id="ms-link" required placeholder="https://drive.google.com/file/d/..." class="w-full px-4 py-3 rounded-xl bg-quijote-cream border border-quijote-border focus:border-quijote-wine focus:ring-1 focus:ring-quijote-wine outline-none text-sm transition-all" />
+              </div>
+            </div>
+
+            <!-- Synopsis / Pitch -->
+            <div>
+              <label for="ms-synopsis" class="block text-xs font-bold uppercase tracking-wider text-quijote-dark mb-1">
+                Sinopsis & Propuesta Editorial (máx. 500 palabras) *
+              </label>
+              <textarea id="ms-synopsis" rows="4" required placeholder="Resume de qué trata tu obra, a qué público va dirigida y por qué debería ser publicada por El Quijote..." class="w-full px-4 py-3 rounded-xl bg-quijote-cream border border-quijote-border focus:border-quijote-wine focus:ring-1 focus:ring-quijote-wine outline-none text-sm transition-all resize-none"></textarea>
+            </div>
+
+            <!-- Terms checkbox -->
+            <div class="flex items-start gap-3">
+              <input type="checkbox" id="ms-terms" required class="mt-1 rounded text-quijote-wine focus:ring-quijote-wine border-quijote-border" />
+              <label for="ms-terms" class="text-xs text-quijote-muted">
+                Declaro ser el titular legítimo de los derechos patrimoniales y morales de la obra presentada y acepto los términos de revisión de El Quijote Grupo Editorial.
+              </label>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" id="btn-submit-manuscript" class="w-full py-4 px-6 rounded-xl bg-quijote-wine text-white font-bold text-sm tracking-wider uppercase hover:bg-quijote-wine-hover shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-2 border border-quijote-gold/30">
+              <i class="fa-solid fa-paper-plane text-quijote-gold"></i>
+              <span>Enviar Manuscrito a Evaluación Editorial</span>
+            </button>
+
+          </form>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ========================================== -->
+  <!-- F) PIE DE PÁGINA (FOOTER) Y CONTACTO       -->
+  <!-- ========================================== -->
+  <footer id="contacto" class="bg-[#0A0A0A] text-white pt-20 pb-12 border-t border-quijote-gold/20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 pb-16 border-b border-white/10">
+        
+        <!-- Brand Info & Socials -->
+        <div class="lg:col-span-5 space-y-6">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-quijote-gold text-quijote-dark flex items-center justify-center font-bold font-serif text-lg">
+              Q
+            </div>
+            <div class="flex flex-col">
+              <span class="font-display font-bold text-xl text-white">El Quijote</span>
+              <span class="text-[10px] font-semibold tracking-[0.25em] text-quijote-gold uppercase -mt-1">Grupo Editorial</span>
+            </div>
+          </div>
+
+          <p class="text-xs sm:text-sm text-white/70 max-w-sm font-sans leading-relaxed">
+            Sello editorial independiente comprometido con la excelencia literaria, la innovación en distribución y el posicionamiento global de nuevas voces hispanas.
+          </p>
+
+          <!-- Contact details -->
+          <div class="space-y-3 text-xs text-white/80">
+            <div class="flex items-center gap-3">
+              <i class="fa-solid fa-globe text-quijote-gold w-4"></i>
+              <a href="https://elquijotegrupoeditorial.com" target="_blank" class="hover:text-quijote-gold transition-colors">elquijotegrupoeditorial.com</a>
+            </div>
+            <div class="flex items-center gap-3">
+              <i class="fa-solid fa-envelope text-quijote-gold w-4"></i>
+              <a href="mailto:contacto@elquijotegrupoeditorial.com" class="hover:text-quijote-gold transition-colors">contacto@elquijotegrupoeditorial.com</a>
+            </div>
+            <div class="flex items-center gap-3">
+              <i class="fa-brands fa-whatsapp text-quijote-gold w-4"></i>
+              <a href="https://wa.me/34600000000" target="_blank" class="hover:text-quijote-gold transition-colors">+34 600 000 000 (Atención al Autor)</a>
+            </div>
+            <div class="flex items-center gap-3">
+              <i class="fa-solid fa-location-dot text-quijote-gold w-4"></i>
+              <span>Sedes oficiales: Madrid • Bogotá • Ciudad de México</span>
+            </div>
+          </div>
+
+          <!-- Social icons -->
+          <div class="flex items-center gap-3 pt-2">
+            <a href="#" aria-label="Instagram" class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-quijote-gold hover:text-quijote-dark transition-colors">
+              <i class="fa-brands fa-instagram text-sm"></i>
+            </a>
+            <a href="#" aria-label="X Twitter" class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-quijote-gold hover:text-quijote-dark transition-colors">
+              <i class="fa-brands fa-x-twitter text-sm"></i>
+            </a>
+            <a href="#" aria-label="Facebook" class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-quijote-gold hover:text-quijote-dark transition-colors">
+              <i class="fa-brands fa-facebook-f text-sm"></i>
+            </a>
+            <a href="#" aria-label="LinkedIn" class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-quijote-gold hover:text-quijote-dark transition-colors">
+              <i class="fa-brands fa-linkedin-in text-sm"></i>
+            </a>
+            <a href="#" aria-label="YouTube" class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-quijote-gold hover:text-quijote-dark transition-colors">
+              <i class="fa-brands fa-youtube text-sm"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Direct Quick Contact Form -->
+        <div class="lg:col-span-7">
+          <div class="bg-quijote-card rounded-2xl p-6 sm:p-8 border border-white/10 space-y-4">
+            <h4 class="font-display text-xl font-bold text-white">Contacto Directo</h4>
+            <p class="text-xs text-white/60">¿Tienes dudas sobre compras corporativas, ferias del libro o prensa? Escríbenos directamente.</p>
+            
+            <form onsubmit="handleDirectContact(event)" class="space-y-4">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <input type="text" id="contact-name" required placeholder="Tu Nombre" class="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/15 focus:border-quijote-gold text-white placeholder-white/40 text-xs outline-none" />
+                <input type="email" id="contact-email" required placeholder="Tu Correo" class="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/15 focus:border-quijote-gold text-white placeholder-white/40 text-xs outline-none" />
+              </div>
+              <textarea id="contact-message" rows="3" required placeholder="Escribe tu mensaje aquí..." class="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/15 focus:border-quijote-gold text-white placeholder-white/40 text-xs outline-none resize-none"></textarea>
+              <button type="submit" class="px-6 py-3 rounded-xl bg-quijote-gold text-quijote-dark font-bold text-xs uppercase tracking-wider hover:bg-quijote-gold-hover transition-colors">
+                Enviar Mensaje
+              </button>
+            </form>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Copyright & Legal Footer -->
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-white/50 space-y-4 sm:space-y-0">
+        <p>© 2026 El Quijote Grupo Editorial (elquijotegrupoeditorial.com). Todos los derechos reservados.</p>
+        <div class="flex items-center gap-6">
+          <a href="#" class="hover:text-quijote-gold transition-colors">Aviso Legal</a>
+          <a href="#" class="hover:text-quijote-gold transition-colors">Política de Privacidad</a>
+          <a href="#" class="hover:text-quijote-gold transition-colors">Términos de Servicio</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+
+  <!-- ========================================== -->
+  <!-- MODAL: LEER FRAGMENTO (E-READER)           -->
+  <!-- ========================================== -->
+  <div id="fragment-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 hidden">
+    <!-- Backdrop -->
+    <div onclick="closeFragmentModal()" class="modal-backdrop fixed inset-0 bg-black/80 backdrop-blur-sm"></div>
+
+    <!-- Reader Card Container -->
+    <div class="modal-content relative z-10 w-full max-w-3xl max-h-[90vh] bg-quijote-cream rounded-3xl border border-quijote-gold/30 shadow-2xl flex flex-col overflow-hidden transition-all transform scale-95 opacity-0" id="fragment-modal-card">
+      
+      <!-- Reader Header Bar -->
+      <div class="px-6 py-4 bg-quijote-paper border-b border-quijote-border flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <span class="w-3 h-3 rounded-full bg-quijote-wine"></span>
+          <div>
+            <h4 id="reader-title" class="font-display text-lg font-bold text-quijote-dark">Título del Libro</h4>
+            <p id="reader-author" class="text-[11px] text-quijote-muted font-semibold uppercase tracking-wider">Autor</p>
+          </div>
+        </div>
+
+        <!-- Reader Customization Controls -->
+        <div class="flex items-center gap-3 text-xs">
+          <!-- Font Size Adjuster -->
+          <div class="flex items-center bg-white rounded-lg border border-quijote-border p-1">
+            <button onclick="adjustReaderFontSize(-1)" aria-label="Disminuir fuente" class="w-7 h-7 rounded hover:bg-quijote-paper flex items-center justify-center text-quijote-dark font-bold">A-</button>
+            <button onclick="adjustReaderFontSize(1)" aria-label="Aumentar fuente" class="w-7 h-7 rounded hover:bg-quijote-paper flex items-center justify-center text-quijote-dark font-bold">A+</button>
+          </div>
+
+          <!-- Color Mode Toggle -->
+          <div class="flex items-center bg-white rounded-lg border border-quijote-border p-1 gap-1">
+            <button onclick="setReaderTheme('cream')" title="Crema" class="w-6 h-6 rounded-full bg-[#FAF8F5] border border-stone-300"></button>
+            <button onclick="setReaderTheme('sepia')" title="Sepia" class="w-6 h-6 rounded-full bg-[#F4EFE6] border border-stone-400"></button>
+            <button onclick="setReaderTheme('dark')" title="Nocturno" class="w-6 h-6 rounded-full bg-[#121212] border border-stone-700"></button>
+          </div>
+
+          <!-- Close Button -->
+          <button onclick="closeFragmentModal()" aria-label="Cerrar modal" class="w-8 h-8 rounded-full bg-white hover:bg-quijote-wine hover:text-white flex items-center justify-center border border-quijote-border transition-colors">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Reader Scrollable Content Body -->
+      <div id="reader-body" class="p-8 sm:p-12 overflow-y-auto font-serif text-base sm:text-lg leading-relaxed text-quijote-dark space-y-6 transition-colors duration-300">
+        <!-- Fragment content injected dynamically via JS -->
+      </div>
+
+      <!-- Reader Footer CTA -->
+      <div class="px-6 py-4 bg-quijote-paper border-t border-quijote-border flex flex-col sm:flex-row items-center justify-between gap-4">
+        <span class="text-xs text-quijote-muted font-sans">Has leído un fragmento de muestra patrocinado por El Quijote.</span>
+        <button id="btn-reader-buy" onclick="closeFragmentModal(); openBuyModal('Obra Completa', '$18.99 USD')" class="px-6 py-2.5 rounded-xl bg-quijote-wine text-white font-semibold text-xs uppercase tracking-wider hover:bg-quijote-wine-hover transition-colors flex items-center gap-2">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <span>Comprar Obra Completa</span>
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- ========================================== -->
+  <!-- MODAL: OPCIONES DE COMPRA                  -->
+  <!-- ========================================== -->
+  <div id="buy-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 hidden">
+    <div onclick="closeBuyModal()" class="modal-backdrop fixed inset-0 bg-black/80 backdrop-blur-sm"></div>
+
+    <div class="modal-content relative z-10 w-full max-w-md bg-white rounded-3xl p-6 sm:p-8 border border-quijote-gold/30 shadow-2xl space-y-6 transition-all transform scale-95 opacity-0" id="buy-modal-card">
+      <div class="flex items-center justify-between border-b border-quijote-border pb-4">
+        <div>
+          <h4 id="buy-book-title" class="font-display text-xl font-bold text-quijote-dark">Título del Libro</h4>
+          <p id="buy-book-price" class="text-xs text-quijote-gold font-bold">Precio Oficial</p>
+        </div>
+        <button onclick="closeBuyModal()" aria-label="Cerrar modal de compra" class="w-8 h-8 rounded-full bg-quijote-cream hover:bg-quijote-wine hover:text-white flex items-center justify-center transition-colors">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <p class="text-xs text-quijote-muted">Selecciona tu plataforma preferida o pide directamente a la editorial:</p>
+
+      <div class="space-y-3">
+        <!-- Option 1: Amazon -->
+        <a href="#" onclick="confirmPurchase('Amazon'); return false;" class="w-full p-3.5 rounded-xl border border-quijote-border hover:border-quijote-gold bg-quijote-cream/50 hover:bg-quijote-cream flex items-center justify-between transition-colors group">
+          <div class="flex items-center gap-3">
+            <i class="fa-brands fa-amazon text-2xl text-quijote-dark group-hover:text-amber-600"></i>
+            <div>
+              <p class="text-xs font-bold text-quijote-dark">Amazon España & Global</p>
+              <p class="text-[10px] text-quijote-muted">Formato Físico (Tapa Blanda) y Kindle ePub</p>
+            </div>
+          </div>
+          <i class="fa-solid fa-chevron-right text-xs text-quijote-muted group-hover:translate-x-1 transition-transform"></i>
+        </a>
+
+        <!-- Option 2: BuscaLibre -->
+        <a href="#" onclick="confirmPurchase('BuscaLibre'); return false;" class="w-full p-3.5 rounded-xl border border-quijote-border hover:border-quijote-gold bg-quijote-cream/50 hover:bg-quijote-cream flex items-center justify-between transition-colors group">
+          <div class="flex items-center gap-3">
+            <i class="fa-solid fa-book text-xl text-quijote-wine"></i>
+            <div>
+              <p class="text-xs font-bold text-quijote-dark">BuscaLibre (Latinoamérica)</p>
+              <p class="text-[10px] text-quijote-muted">Envíos puerta a puerta sin aduanas</p>
+            </div>
+          </div>
+          <i class="fa-solid fa-chevron-right text-xs text-quijote-muted group-hover:translate-x-1 transition-transform"></i>
+        </a>
+
+        <!-- Option 3: Direct WhatsApp Editorial -->
+        <a href="#" onclick="confirmPurchase('WhatsApp Directo'); return false;" class="w-full p-3.5 rounded-xl border border-quijote-gold/50 bg-emerald-50 hover:bg-emerald-100 flex items-center justify-between transition-colors group">
+          <div class="flex items-center gap-3">
+            <i class="fa-brands fa-whatsapp text-2xl text-emerald-600"></i>
+            <div>
+              <p class="text-xs font-bold text-emerald-900">Pedido Directo con Firma del Autor</p>
+              <p class="text-[10px] text-emerald-700">Atención personalizada WhatsApp</p>
+            </div>
+          </div>
+          <i class="fa-solid fa-chevron-right text-xs text-emerald-600 group-hover:translate-x-1 transition-transform"></i>
+        </a>
+      </div>
+
+      <div class="text-[10px] text-center text-quijote-muted pt-2">
+        <i class="fa-solid fa-lock mr-1"></i> Transacción 100% Segura con garantía de El Quijote Grupo Editorial.
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ========================================== -->
+  <!-- MODAL RECEIPT / TOAST NOTIFICATION        -->
+  <!-- ========================================== -->
+  <div id="toast" class="fixed bottom-6 right-6 z-50 max-w-md bg-quijote-dark text-white p-5 rounded-2xl shadow-2xl border border-quijote-gold/40 flex items-start gap-4 transform translate-y-24 opacity-0 transition-all duration-300 pointer-events-none">
+    <div class="w-10 h-10 rounded-full bg-quijote-gold/20 text-quijote-gold flex items-center justify-center shrink-0">
+      <i class="fa-solid fa-circle-check text-xl"></i>
+    </div>
+    <div class="space-y-1">
+      <h5 id="toast-title" class="font-display font-bold text-sm text-quijote-gold">¡Solicitud Recibida!</h5>
+      <p id="toast-message" class="text-xs text-white/80 font-sans leading-relaxed">
+        Tu manuscrito ha ingresado exitosamente a nuestro sistema de evaluación.
+      </p>
+    </div>
+  </div>
+
+
+  <!-- ========================================== -->
+  <!-- JAVASCRIPT EMBEDDED LOGIC                 -->
+  <!-- ========================================== -->
+  <script>
+    // Fragment Texts Database
+    const FRAGMENTS_DB = {
+      lecciones: {
+        title: '100 Pequeñas Grandes Lecciones',
+        author: 'Josben Torres & Co-autores',
+        content: `
+          <p class="drop-cap">No medimos la grandeza de un autor por la cantidad de páginas escritas, sino por la profundidad de las huellas que sus palabras dejan en el espíritu del lector. En la vorágine del siglo XXI, donde la prisa sofoca el pensamiento reflexivo, detenerse a leer una lección consciente es una declaración de libertad intelectual.</p>
+          <p>Capítulo 1: El Arte de la Persistencia Discreta.</p>
+          <p>A menudo confundimos la constancia con el ruido. Creemos que avanzar requiere gritar nuestras metas a los cuatro vientos. Sin embargo, la verdadera maestría se cultiva en el silencio de la madrugada, cuando el único testigo de tus esfuerzos es tu propia determinación. Cada pequeño hábito sostenido en el tiempo es una piedra angular sobre la que se erige una vida de trascendencia.</p>
+          <p>Recuerda siempre: las grandes transformaciones no ocurren en eventos espectaculares, sino en la acumulación silenciosa de cien decisiones diarias.</p>
+        `
+      },
+      comediante: {
+        title: 'Quiero ser comediante',
+        author: 'Carlos "El Guasón" M.',
+        content: `
+          <p class="drop-cap">El micrófono estaba helado. La luz del reflector me cegaba tanto que no podía ver si en la tercera fila había un público entusiasmado o un grupo de ejecutivos esperando mi fracaso para empezar a abuchear. Tenía tres minutos para demostrar que la risa es la única medicina que no requiere receta médica.</p>
+          <p>Prólogo: La Primera Vez Que Nadie Se Rió.</p>
+          <p>Hacer reír a la gente es un acto de valentía desmedida. Estás frente a un grupo de desconocidos armado únicamente con tus neurosis, tus tragedias personales y una inflexión de voz calculada. Cuando sueltas el remate y el silencio inunda el salón, sientes cómo el tiempo se dilata hasta el infinito.</p>
+          <p>Fue esa noche, en un bar subterráneo que olía a cerveza rancia, cuando comprendí la lección más valiosa de mi carrera: la comedia no se trata de no caerse, sino de aprender a levantarse sonriendo.</p>
+        `
+      },
+      fenixidad: {
+        title: 'La Fenixidad',
+        author: 'Elena Valenzuela',
+        content: `
+          <p class="drop-cap">Dicen los ancianos de San Pedro de las Cenizas que el fuego no destruye las cosas; simplemente les revela su forma verdadera. Cuando las llamas devoraron la antigua biblioteca del convento, nadie esperaba que entre los escombros humeantes floreciera una rosa de pétalos dorados.</p>
+          <p>Capítulo I: El Canto sobre las Ruinas.</p>
+          <p>Valeria caminó sobre los restos todavía cálidos de lo que fue el hogar de sus antepasados. No había lágrimas en sus ojos, sino una chispa primordial que rehusaba apagarse. La Fenixidad no es un mito antiguo sobre aves legendarias; es el atributo secreto que habita en el pecho de quienes se niegan a ser definidos por sus pérdidas.</p>
+          <p>Esa mañana, al levantar la primera piedra, el viento trajo consigo el murmullo de mil voces que susurraban: "Es hora de renacer".</p>
+        `
+      },
+      dejavu: {
+        title: 'Déjà vu',
+        author: 'Ricardo Sánches',
+        content: `
+          <p class="drop-cap">El reloj de pared de la comisaría marcaba las 11:42 p.m. cuando sonó el teléfono. Lo extraño no fue la llamada en mitad de una noche lluviosa de noviembre, sino que yo ya sabía exactamente qué palabras iba a pronunciar la voz al otro lado de la línea antes de descolgar.</p>
+          <p>Escena 1: Recuerdos del Mañana.</p>
+          <p>—Inspector Sánches, hay un cadáver en la calle Olmos número 404 —dijo el oficial de guardia.</p>
+          <p>—Lo sé —respondí secamente—. Lleva una gabardina gris, un reloj de bolsillo detenido a las diez y una carta no enviada en el bolsillo interior.</p>
+          <p>Hubo una pausa helada. El oficial no podía saber que llevaba tres días soñando con ese crimen exacto. O tal vez, que ese crimen ya había ocurrido en un presente paralelo del cual no podía escapar.</p>
+        `
+      }
+    };
+
+    let currentReaderFontSize = 18; // default font size
+
+    // Mobile Navigation Menu Toggle
+    document.addEventListener('DOMContentLoaded', () => {
+      const menuBtn = document.getElementById('mobile-menu-toggle');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const iconBars = document.getElementById('menu-icon-bars');
+      const iconClose = document.getElementById('menu-icon-close');
+      const mobileLinks = document.querySelectorAll('.mobile-nav-link');
+
+      if (menuBtn && mobileMenu) {
+        menuBtn.addEventListener('click', () => {
+          const isHidden = mobileMenu.classList.contains('hidden');
+          if (isHidden) {
+            mobileMenu.classList.remove('hidden');
+            iconBars.classList.add('hidden');
+            iconClose.classList.remove('hidden');
+          } else {
+            mobileMenu.classList.add('hidden');
+            iconBars.classList.remove('hidden');
+            iconClose.classList.add('hidden');
+          }
+        });
+
+        mobileLinks.forEach(link => {
+          link.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+            iconBars.classList.remove('hidden');
+            iconClose.classList.add('hidden');
+          });
+        });
+      }
+
+      // Catalog Filtering
+      const filterBtns = document.querySelectorAll('.filter-btn');
+      const bookCards = document.querySelectorAll('.book-card');
+
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          // Remove active styles from all
+          filterBtns.forEach(b => {
+            b.classList.remove('bg-quijote-wine', 'text-white');
+            b.classList.add('bg-white', 'text-quijote-dark/80');
+          });
+
+          // Set active on clicked
+          btn.classList.remove('bg-white', 'text-quijote-dark/80');
+          btn.classList.add('bg-quijote-wine', 'text-white');
+
+          const filter = btn.getAttribute('data-filter');
+
+          bookCards.forEach(card => {
+            if (filter === 'all' || card.getAttribute('data-category') === filter) {
+              card.style.display = 'flex';
+            } else {
+              card.style.display = 'none';
+            }
+          });
+        });
+      });
+    });
+
+    // Modal Fragment Functions
+    function openFragmentModal(bookKey) {
+      const modal = document.getElementById('fragment-modal');
+      const modalCard = document.getElementById('fragment-modal-card');
+      const titleEl = document.getElementById('reader-title');
+      const authorEl = document.getElementById('reader-author');
+      const bodyEl = document.getElementById('reader-body');
+
+      const data = FRAGMENTS_DB[bookKey];
+      if (data) {
+        titleEl.textContent = data.title;
+        authorEl.textContent = data.author;
+        bodyEl.innerHTML = data.content;
+        bodyEl.style.fontSize = currentReaderFontSize + 'px';
+
+        modal.classList.remove('hidden');
+        setTimeout(() => {
+          modalCard.classList.remove('scale-95', 'opacity-0');
+          modalCard.classList.add('scale-100', 'opacity-100');
+        }, 10);
+      }
+    }
+
+    function closeFragmentModal() {
+      const modal = document.getElementById('fragment-modal');
+      const modalCard = document.getElementById('fragment-modal-card');
+
+      modalCard.classList.remove('scale-100', 'opacity-100');
+      modalCard.classList.add('scale-95', 'opacity-0');
+
+      setTimeout(() => {
+        modal.classList.add('hidden');
+      }, 250);
+    }
+
+    function adjustReaderFontSize(delta) {
+      currentReaderFontSize = Math.max(14, Math.min(26, currentReaderFontSize + delta));
+      const bodyEl = document.getElementById('reader-body');
+      if (bodyEl) {
+        bodyEl.style.fontSize = currentReaderFontSize + 'px';
+      }
+    }
+
+    function setReaderTheme(theme) {
+      const bodyEl = document.getElementById('reader-body');
+      if (!bodyEl) return;
+
+      if (theme === 'cream') {
+        bodyEl.style.backgroundColor = '#FAF8F5';
+        bodyEl.style.color = '#121212';
+      } else if (theme === 'sepia') {
+        bodyEl.style.backgroundColor = '#F4EFE6';
+        bodyEl.style.color = '#432818';
+      } else if (theme === 'dark') {
+        bodyEl.style.backgroundColor = '#121212';
+        bodyEl.style.color = '#FAF8F5';
+      }
+    }
+
+    // Modal Buy Functions
+    function openBuyModal(title, price) {
+      const modal = document.getElementById('buy-modal');
+      const modalCard = document.getElementById('buy-modal-card');
+      const titleEl = document.getElementById('buy-book-title');
+      const priceEl = document.getElementById('buy-book-price');
+
+      if (titleEl && priceEl) {
+        titleEl.textContent = title;
+        priceEl.textContent = price;
+      }
+
+      modal.classList.remove('hidden');
+      setTimeout(() => {
+        modalCard.classList.remove('scale-95', 'opacity-0');
+        modalCard.classList.add('scale-100', 'opacity-100');
+      }, 10);
+    }
+
+    function closeBuyModal() {
+      const modal = document.getElementById('buy-modal');
+      const modalCard = document.getElementById('buy-modal-card');
+
+      modalCard.classList.remove('scale-100', 'opacity-100');
+      modalCard.classList.add('scale-95', 'opacity-0');
+
+      setTimeout(() => {
+        modal.classList.add('hidden');
+      }, 250);
+    }
+
+    function confirmPurchase(merchant) {
+      closeBuyModal();
+      showToast('¡Redirigiendo a ' + merchant + '!', 'En breve accederás a la plataforma de venta oficial para finalizar tu pedido.');
+    }
+
+    // Manuscript Submit Handler
+    function handleManuscriptSubmit(event) {
+      event.preventDefault();
+      const btn = document.getElementById('btn-submit-manuscript');
+      const author = document.getElementById('ms-author').value;
+      const title = document.getElementById('ms-title').value;
+
+      // Disable button & show spinner
+      btn.disabled = true;
+      btn.innerHTML = '<i class="fa-solid fa-spinner animate-spin"></i><span>Procesando Manuscrito...</span>';
+
+      setTimeout(() => {
+        btn.disabled = false;
+        btn.innerHTML = '<i class="fa-solid fa-paper-plane text-quijote-gold"></i><span>Enviar Manuscrito a Evaluación Editorial</span>';
+        
+        // Reset form
+        document.getElementById('manuscript-form').reset();
+
+        // Show success Toast
+        const code = 'EQ-2026-' + Math.floor(1000 + Math.random() * 9000);
+        showToast('¡Manuscrito Recibido con Éxito!', 'Gracias ' + author + '. Tu obra "' + title + '" ha sido registrada bajo el código ' + code + '. Nuestro comité se comunicará en menos de 14 días.');
+      }, 1200);
+    }
+
+    // Direct Contact Handler
+    function handleDirectContact(event) {
+      event.preventDefault();
+      const name = document.getElementById('contact-name').value;
+      
+      showToast('¡Mensaje Enviado!', 'Gracias ' + name + '. Un asesor editorial responderá a tu correo en las próximas horas.');
+      event.target.reset();
+    }
+
+    // Toast Notification System
+    function showToast(title, message) {
+      const toast = document.getElementById('toast');
+      const toastTitle = document.getElementById('toast-title');
+      const toastMsg = document.getElementById('toast-message');
+
+      toastTitle.textContent = title;
+      toastMsg.textContent = message;
+
+      toast.classList.remove('translate-y-24', 'opacity-0', 'pointer-events-none');
+      toast.classList.add('translate-y-0', 'opacity-100');
+
+      setTimeout(() => {
+        toast.classList.remove('translate-y-0', 'opacity-100');
+        toast.classList.add('translate-y-24', 'opacity-0', 'pointer-events-none');
+      }, 5000);
+    }
+  </script>
+
+</body>
+</html>

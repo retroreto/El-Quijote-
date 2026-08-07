@@ -1,0 +1,6 @@
+{
+  "name": "El Quijote Grupo Editorial",
+  "description": "Sitio web oficial de El Quijote Grupo Editorial. Editorial independiente de alto nivel.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
