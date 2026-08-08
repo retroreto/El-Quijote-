@@ -1,5 +1,5 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/USUARIO_CPANEL/public_html/
+    - export DEPLOYPATH=/home/elquijot/public_html/
     - /bin/rsync -rav --exclude='.git*' * $DEPLOYPATH
