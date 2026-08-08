@@ -762,7 +762,7 @@
 
         <!-- Right: Manuscript Interactive Form -->
         <div class="lg:col-span-7">
-          <form id="manuscript-form" action="https://formsubmit.co/elquijotegrupoeditorial@gmail.com" method="POST" enctype="multipart/form-data" onsubmit="handleManuscriptSubmit(event)" class="bg-white text-quijote-dark rounded-3xl p-6 sm:p-10 border border-quijote-border shadow-2xl space-y-6">
+          <form id="manuscript-form" action="https://formsubmit.co/313e9b51809478b7790df0e0e45b104d" method="POST" enctype="multipart/form-data" onsubmit="handleManuscriptSubmit(event)" class="bg-white text-quijote-dark rounded-3xl p-6 sm:p-10 border border-quijote-border shadow-2xl space-y-6">
             <input type="hidden" name="_subject" value="Nueva Postulación de Manuscrito - El Quijote Grupo Editorial" />
             <input type="hidden" name="_captcha" value="false" />
             
@@ -827,7 +827,7 @@
                 <label for="ms-file" class="block text-xs font-bold uppercase tracking-wider text-quijote-dark mb-1">
                   Adjuntar Manuscrito (Word / PDF) *
                 </label>
-                <input type="file" id="ms-file" name="manuscrito" accept=".doc,.docx,.pdf" required class="w-full px-3 py-2 rounded-xl bg-quijote-cream border border-quijote-border focus:border-quijote-wine focus:ring-1 focus:ring-quijote-wine outline-none text-xs transition-all file:mr-3 file:py-1.5 file:px-3 file:rounded-lg file:border-0 file:text-xs file:font-bold file:bg-quijote-wine file:text-white hover:file:bg-quijote-wine-hover cursor-pointer" />
+                <input type="file" id="ms-file" name="attachment" accept=".doc,.docx,.pdf" required class="w-full px-3 py-2 rounded-xl bg-quijote-cream border border-quijote-border focus:border-quijote-wine focus:ring-1 focus:ring-quijote-wine outline-none text-xs transition-all file:mr-3 file:py-1.5 file:px-3 file:rounded-lg file:border-0 file:text-xs file:font-bold file:bg-quijote-wine file:text-white hover:file:bg-quijote-wine-hover cursor-pointer" />
               </div>
             </div>
 
@@ -1329,7 +1329,7 @@
       const formData = new FormData(form);
 
       try {
-        await fetch('https://formsubmit.co/ajax/elquijotegrupoeditorial@gmail.com', {
+        await fetch('https://formsubmit.co/ajax/313e9b51809478b7790df0e0e45b104d', {
           method: 'POST',
           body: formData
         });
