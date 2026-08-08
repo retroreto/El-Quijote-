@@ -1099,6 +1099,7 @@
     const FRAGMENTS_DB = {
       lecciones: {
         title: '100 Pequeñas Grandes Lecciones',
+        price: '$49,90 USD',
         author: 'JOSBEN TORRES',
         content: `
           <p class="drop-cap">La gratitud que siento por mi hijo, Luis Manuel, es de otra naturaleza, más física, más visceral. Yo lo miro y todavía puedo recordar el olor de su piel cuando lo cargué por primera vez, la tibieza de su cuerpo dormido sobre mi pecho, el sonido irregular de su respiración marcando mis noches. Ser su papá me enseñó cosas que ningún libro me habría podido explicar. Yo entendí que el amor más profundo no es cómodo ni liviano; es una responsabilidad constante que te obliga a crecer incluso cuando estás cansado. Estas páginas existen porque él existe. Cada línea fue escrita con la esperanza de que, algún día, cuando la vida lo sacuda o lo confunda, encuentre aquí una voz familiar, una presencia firme, un recordatorio de que siempre fue profundamente amado.</p>
@@ -1107,6 +1108,7 @@
       },
       comediante: {
         title: 'Quiero ser comediante',
+        price: '$29,90 USD',
         author: 'JOSBEN TORRES (Prólogo: Carlos Sicilia)',
         content: `
           <p class="drop-cap">Josben Torres posee una inmensa calidad humana y un increíble sentido del humor y le agradezco su invitación para escribir este prólogo.</p>
@@ -1118,6 +1120,7 @@
       },
       fenixidad: {
         title: 'La Fenixidad',
+        price: '$29,90 USD',
         author: 'JOSBEN TORRES',
         content: `
           <p class="drop-cap">Cuando el estruendo de la caída finalmente cesa, no te queda un vacío poético ni una oportunidad mágica para 'decretar' cosas. Lo que queda es, sencillamente, un inventario.</p>
@@ -1130,6 +1133,7 @@
       },
       dejavu: {
         title: 'Déjà vu',
+        price: '$19,90 USD',
         author: 'JOSBEN TORRES (Prólogo: Carlos Malpica)',
         content: `
           <p class="drop-cap">Me han dicho que escribir es tender puentes, pero yo prefiero pensar que es derribar muros.</p>
@@ -1218,6 +1222,13 @@
         authorEl.textContent = data.author;
         bodyEl.innerHTML = data.content;
         bodyEl.style.fontSize = currentReaderFontSize + 'px';
+
+        const btnBuy = document.getElementById('btn-reader-buy');
+        if (btnBuy) {
+          const safeTitle = data.title.replace(/'/g, "\\'");
+          const safePrice = (data.price || '$19.90 USD').replace(/'/g, "\\'");
+          btnBuy.setAttribute('onclick', `closeFragmentModal(); openBuyModal('${safeTitle}', '${safePrice}')`);
+        }
 
         modal.classList.remove('hidden');
         setTimeout(() => {
