@@ -1054,7 +1054,7 @@
         </a>
 
         <!-- Option 3: WhatsApp -->
-        <a href="https://wa.me/584144027582" target="_blank" rel="noopener noreferrer" onclick="closeBuyModal()" class="w-full p-3.5 rounded-xl border border-quijote-gold/50 bg-emerald-50 hover:bg-emerald-100 flex items-center justify-between transition-colors group">
+        <a id="buy-whatsapp-link" href="https://wa.me/584144027582" target="_blank" rel="noopener noreferrer" onclick="closeBuyModal()" class="w-full p-3.5 rounded-xl border border-quijote-gold/50 bg-emerald-50 hover:bg-emerald-100 flex items-center justify-between transition-colors group">
           <div class="flex items-center gap-3">
             <i class="fa-brands fa-whatsapp text-2xl text-emerald-600"></i>
             <div>
@@ -1267,10 +1267,27 @@
       const modalCard = document.getElementById('buy-modal-card');
       const titleEl = document.getElementById('buy-book-title');
       const priceEl = document.getElementById('buy-book-price');
+      const waLink = document.getElementById('buy-whatsapp-link');
 
       if (titleEl && priceEl) {
         titleEl.textContent = title;
         priceEl.textContent = price;
+      }
+
+      if (waLink) {
+        let waUrl = "https://wa.me/584144027582";
+        if (title.includes("100 Pequeñas Grandes Lecciones")) {
+          waUrl = "https://wa.me/584144027582?text=Hola,%20deseo%20adquirir%20el%20libro%20100%20Peque%C3%B1as%20Grandes%20Lecciones";
+        } else if (title.includes("Quiero ser comediante")) {
+          waUrl = "https://wa.me/584144027582?text=Hola,%20deseo%20adquirir%20el%20libro%20Quiero%20ser%20comediante";
+        } else if (title.includes("La Fenixidad")) {
+          waUrl = "https://wa.me/584144027582?text=Hola,%20deseo%20adquirir%20el%20libro%20La%20Fenixidad";
+        } else if (title.includes("Déjà vu") || title.includes("Déjà Vu") || title.includes("Deja vu")) {
+          waUrl = "https://wa.me/584144027582?text=Hola,%20deseo%20adquirir%20el%20libro%20D%C3%A9j%C3%A0%20Vu";
+        } else {
+          waUrl = "https://wa.me/584144027582?text=" + encodeURIComponent("Hola, deseo adquirir el libro " + title);
+        }
+        waLink.href = waUrl;
       }
 
       modal.classList.remove('hidden');
