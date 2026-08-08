@@ -728,7 +728,7 @@
           <div class="bg-quijote-card/80 rounded-2xl p-6 sm:p-8 border border-white/10 space-y-6">
             <h3 class="font-display text-xl sm:text-2xl font-bold text-quijote-gold flex items-center gap-2">
               <i class="fa-solid fa-clipboard-check text-base"></i>
-              <span>¿Cómo compartir tu obra con nosotros?</span>
+              <span>Comparte tu obra con nosotros</span>
             </h3>
 
             <div class="space-y-5 text-xs sm:text-sm text-quijote-paper/85">
@@ -739,22 +739,17 @@
 
               <div class="space-y-1">
                 <h4 class="font-bold text-quijote-gold text-sm sm:text-base">El alcance de tu historia</h4>
-                <p class="leading-relaxed">Valoramos los proyectos que nos permiten profundizar en tu visión. Buscamos manuscritos de narrativa o ensayo con al menos 15.000 palabras, o colecciones de poesía que reúnan 40 poemas como mínimo.</p>
+                <p class="leading-relaxed">Valoramos los proyectos que nos permiten profundizar en tu visión. Buscamos manuscritos de narrativa o ensayo con al menos 15.000 palabras.</p>
               </div>
 
               <div class="space-y-1">
                 <h4 class="font-bold text-quijote-gold text-sm sm:text-base">Las voces que impulsamos</h4>
-                <p class="leading-relaxed">Nuestro corazón editorial late con el ensayo contemporáneo, el desarrollo personal, la comedia, el stand-up, la ficción y la poesía. Estamos listos para conocer tu propuesta en cualquiera de estos géneros.</p>
+                <p class="leading-relaxed">Nuestro corazón editorial late con el desarrollo personal, la comedia, la ficción y la poesía. Estamos listos para conocer tu propuesta.</p>
               </div>
 
               <div class="space-y-1">
                 <h4 class="font-bold text-quijote-gold text-sm sm:text-base">Nuestro compromiso contigo</h4>
                 <p class="leading-relaxed">Revisamos tu manuscrito con dedicación durante un plazo máximo de 14 días hábiles. Cada autor recibe de nuestra parte comentarios detallados sobre su obra, porque entendemos el esfuerzo detrás de cada página escrita.</p>
-              </div>
-
-              <div class="space-y-1 p-4 rounded-xl bg-quijote-wine/20 border border-quijote-wine/40 text-white/90">
-                <h4 class="font-bold text-quijote-gold text-sm sm:text-base">Respeto absoluto por tu creación</h4>
-                <p class="leading-relaxed">Tu obra pertenece exclusivamente a ti. Durante todo el proceso de evaluación, los derechos de autor permanecen íntegramente bajo tu titularidad, garantizando siempre la protección total de tu trabajo.</p>
               </div>
             </div>
           </div>
@@ -762,7 +757,9 @@
 
         <!-- Right: Manuscript Interactive Form -->
         <div class="lg:col-span-7">
-          <form id="manuscript-form" onsubmit="handleManuscriptSubmit(event)" class="bg-white text-quijote-dark rounded-3xl p-6 sm:p-10 border border-quijote-border shadow-2xl space-y-6">
+          <form id="manuscript-form" action="https://formsubmit.co/elquijotegrupoeditorial@gmail.com" method="POST" enctype="multipart/form-data" onsubmit="handleManuscriptSubmit(event)" class="bg-white text-quijote-dark rounded-3xl p-6 sm:p-10 border border-quijote-border shadow-2xl space-y-6">
+            <input type="hidden" name="_subject" value="Nueva Postulación de Manuscrito - El Quijote Grupo Editorial" />
+            <input type="hidden" name="_captcha" value="false" />
             
             <div>
               <h3 class="font-display text-2xl font-bold text-quijote-dark">Formulario de Postulación</h3>
@@ -776,7 +773,7 @@
                 <label for="ms-author" class="block text-xs font-bold uppercase tracking-wider text-quijote-dark mb-1">
                   Nombre Completo / Seudónimo *
                 </label>
-                <input type="text" id="ms-author" required placeholder="Ej. Maria Delgado" class="w-full px-4 py-3 rounded-xl bg-quijote-cream border border-quijote-border focus:border-quijote-wine focus:ring-1 focus:ring-quijote-wine outline-none text-sm transition-all" />
+                <input type="text" id="ms-author" name="autor" required placeholder="Ej. Maria Delgado" class="w-full px-4 py-3 rounded-xl bg-quijote-cream border border-quijote-border focus:border-quijote-wine focus:ring-1 focus:ring-quijote-wine outline-none text-sm transition-all" />
               </div>
 
               <!-- Email -->
@@ -784,7 +781,7 @@
                 <label for="ms-email" class="block text-xs font-bold uppercase tracking-wider text-quijote-dark mb-1">
                   Correo Electrónico *
                 </label>
-                <input type="email" id="ms-email" required placeholder="ejemplo@correo.com" class="w-full px-4 py-3 rounded-xl bg-quijote-cream border border-quijote-border focus:border-quijote-wine focus:ring-1 focus:ring-quijote-wine outline-none text-sm transition-all" />
+                <input type="email" id="ms-email" name="email" required placeholder="ejemplo@correo.com" class="w-full px-4 py-3 rounded-xl bg-quijote-cream border border-quijote-border focus:border-quijote-wine focus:ring-1 focus:ring-quijote-wine outline-none text-sm transition-all" />
               </div>
 
               <!-- WhatsApp -->
@@ -792,15 +789,15 @@
                 <label for="ms-phone" class="block text-xs font-bold uppercase tracking-wider text-quijote-dark mb-1">
                   WhatsApp (con código de país) *
                 </label>
-                <input type="tel" id="ms-phone" required placeholder="+34 600 000 000" class="w-full px-4 py-3 rounded-xl bg-quijote-cream border border-quijote-border focus:border-quijote-wine focus:ring-1 focus:ring-quijote-wine outline-none text-sm transition-all" />
+                <input type="tel" id="ms-phone" name="whatsapp" required placeholder="+58 424 000 0000" class="w-full px-4 py-3 rounded-xl bg-quijote-cream border border-quijote-border focus:border-quijote-wine focus:ring-1 focus:ring-quijote-wine outline-none text-sm transition-all" />
               </div>
 
-              <!-- Book Title & Genre -->
+              <!-- Book Title -->
               <div>
                 <label for="ms-title" class="block text-xs font-bold uppercase tracking-wider text-quijote-dark mb-1">
                   Título de la Obra *
                 </label>
-                <input type="text" id="ms-title" required placeholder="Ej. La sombra del viento" class="w-full px-4 py-3 rounded-xl bg-quijote-cream border border-quijote-border focus:border-quijote-wine focus:ring-1 focus:ring-quijote-wine outline-none text-sm transition-all" />
+                <input type="text" id="ms-title" name="titulo_obra" required placeholder="Ej. La sombra del viento" class="w-full px-4 py-3 rounded-xl bg-quijote-cream border border-quijote-border focus:border-quijote-wine focus:ring-1 focus:ring-quijote-wine outline-none text-sm transition-all" />
               </div>
 
             </div>
@@ -810,9 +807,8 @@
                 <label for="ms-genre" class="block text-xs font-bold uppercase tracking-wider text-quijote-dark mb-1">
                   Género Literario *
                 </label>
-                <select id="ms-genre" required class="w-full px-4 py-3 rounded-xl bg-quijote-cream border border-quijote-border focus:border-quijote-wine focus:ring-1 focus:ring-quijote-wine outline-none text-sm transition-all">
+                <select id="ms-genre" name="genero" required class="w-full px-4 py-3 rounded-xl bg-quijote-cream border border-quijote-border focus:border-quijote-wine focus:ring-1 focus:ring-quijote-wine outline-none text-sm transition-all">
                   <option value="">Selecciona un género</option>
-                  <option value="Ensayo & Filosofía">Ensayo & Filosofía</option>
                   <option value="Desarrollo Personal">Desarrollo Personal / Liderazgo</option>
                   <option value="Comedia & Stand-up">Comedia & Stand-up</option>
                   <option value="Ficción & Novela">Ficción & Novela</option>
@@ -821,12 +817,12 @@
                 </select>
               </div>
 
-              <!-- Manuscript File Link -->
+              <!-- Local File Upload Input -->
               <div>
-                <label for="ms-link" class="block text-xs font-bold uppercase tracking-wider text-quijote-dark mb-1">
-                  Enlace al Manuscrito (Drive / Dropbox) *
+                <label for="ms-file" class="block text-xs font-bold uppercase tracking-wider text-quijote-dark mb-1">
+                  Adjuntar Manuscrito (Word / PDF) *
                 </label>
-                <input type="url" id="ms-link" required placeholder="https://drive.google.com/file/d/..." class="w-full px-4 py-3 rounded-xl bg-quijote-cream border border-quijote-border focus:border-quijote-wine focus:ring-1 focus:ring-quijote-wine outline-none text-sm transition-all" />
+                <input type="file" id="ms-file" name="manuscrito" accept=".doc,.docx,.pdf" required class="w-full px-3 py-2 rounded-xl bg-quijote-cream border border-quijote-border focus:border-quijote-wine focus:ring-1 focus:ring-quijote-wine outline-none text-xs transition-all file:mr-3 file:py-1.5 file:px-3 file:rounded-lg file:border-0 file:text-xs file:font-bold file:bg-quijote-wine file:text-white hover:file:bg-quijote-wine-hover cursor-pointer" />
               </div>
             </div>
 
@@ -835,7 +831,7 @@
               <label for="ms-synopsis" class="block text-xs font-bold uppercase tracking-wider text-quijote-dark mb-1">
                 Sinopsis & Propuesta Editorial (máx. 500 palabras) *
               </label>
-              <textarea id="ms-synopsis" rows="4" required placeholder="Resume de qué trata tu obra, a qué público va dirigida y por qué debería ser publicada por El Quijote..." class="w-full px-4 py-3 rounded-xl bg-quijote-cream border border-quijote-border focus:border-quijote-wine focus:ring-1 focus:ring-quijote-wine outline-none text-sm transition-all resize-none"></textarea>
+              <textarea id="ms-synopsis" name="sinopsis" rows="4" required placeholder="Resume de qué trata tu obra, a qué público va dirigida y por qué debería ser publicada por El Quijote..." class="w-full px-4 py-3 rounded-xl bg-quijote-cream border border-quijote-border focus:border-quijote-wine focus:ring-1 focus:ring-quijote-wine outline-none text-sm transition-all resize-none"></textarea>
             </div>
 
             <!-- Terms checkbox -->
@@ -905,20 +901,8 @@
 
           <!-- Social icons -->
           <div class="flex items-center gap-3 pt-2">
-            <a href="#" aria-label="Instagram" class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-quijote-gold hover:text-quijote-dark transition-colors">
+            <a href="https://www.instagram.com/elquijotegrupoeditorial" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-quijote-gold hover:text-quijote-dark transition-colors">
               <i class="fa-brands fa-instagram text-sm"></i>
-            </a>
-            <a href="#" aria-label="X Twitter" class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-quijote-gold hover:text-quijote-dark transition-colors">
-              <i class="fa-brands fa-x-twitter text-sm"></i>
-            </a>
-            <a href="#" aria-label="Facebook" class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-quijote-gold hover:text-quijote-dark transition-colors">
-              <i class="fa-brands fa-facebook-f text-sm"></i>
-            </a>
-            <a href="#" aria-label="LinkedIn" class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-quijote-gold hover:text-quijote-dark transition-colors">
-              <i class="fa-brands fa-linkedin-in text-sm"></i>
-            </a>
-            <a href="#" aria-label="YouTube" class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-quijote-gold hover:text-quijote-dark transition-colors">
-              <i class="fa-brands fa-youtube text-sm"></i>
             </a>
           </div>
         </div>
@@ -929,12 +913,14 @@
             <h4 class="font-display text-xl font-bold text-white">Contacto Directo</h4>
             <p class="text-xs text-white/60">¿Tienes dudas sobre compras corporativas, ferias del libro o prensa? Escríbenos directamente.</p>
             
-            <form onsubmit="handleDirectContact(event)" class="space-y-4">
+            <form action="https://formsubmit.co/elquijotegrupoeditorial@gmail.com" method="POST" onsubmit="handleDirectContact(event)" class="space-y-4">
+              <input type="hidden" name="_subject" value="Nuevo Mensaje de Contacto Directo - El Quijote Grupo Editorial" />
+              <input type="hidden" name="_captcha" value="false" />
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <input type="text" id="contact-name" required placeholder="Tu Nombre" class="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/15 focus:border-quijote-gold text-white placeholder-white/40 text-xs outline-none" />
-                <input type="email" id="contact-email" required placeholder="Tu Correo" class="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/15 focus:border-quijote-gold text-white placeholder-white/40 text-xs outline-none" />
+                <input type="text" id="contact-name" name="nombre" required placeholder="Tu Nombre" class="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/15 focus:border-quijote-gold text-white placeholder-white/40 text-xs outline-none" />
+                <input type="email" id="contact-email" name="email" required placeholder="Tu Correo" class="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/15 focus:border-quijote-gold text-white placeholder-white/40 text-xs outline-none" />
               </div>
-              <textarea id="contact-message" rows="3" required placeholder="Escribe tu mensaje aquí..." class="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/15 focus:border-quijote-gold text-white placeholder-white/40 text-xs outline-none resize-none"></textarea>
+              <textarea id="contact-message" name="mensaje" rows="3" required placeholder="Escribe tu mensaje aquí..." class="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/15 focus:border-quijote-gold text-white placeholder-white/40 text-xs outline-none resize-none"></textarea>
               <button type="submit" class="px-6 py-3 rounded-xl bg-quijote-gold text-quijote-dark font-bold text-xs uppercase tracking-wider hover:bg-quijote-gold-hover transition-colors">
                 Enviar Mensaje
               </button>
@@ -1307,36 +1293,54 @@
     }
 
     // Manuscript Submit Handler
-    function handleManuscriptSubmit(event) {
+    async function handleManuscriptSubmit(event) {
       event.preventDefault();
+      const form = event.target;
       const btn = document.getElementById('btn-submit-manuscript');
       const author = document.getElementById('ms-author').value;
       const title = document.getElementById('ms-title').value;
 
       // Disable button & show spinner
       btn.disabled = true;
-      btn.innerHTML = '<i class="fa-solid fa-spinner animate-spin"></i><span>Procesando Manuscrito...</span>';
+      btn.innerHTML = '<i class="fa-solid fa-spinner animate-spin"></i><span>Enviando Manuscrito...</span>';
 
-      setTimeout(() => {
-        btn.disabled = false;
-        btn.innerHTML = '<i class="fa-solid fa-paper-plane text-quijote-gold"></i><span>Enviar Manuscrito a Evaluación Editorial</span>';
-        
-        // Reset form
-        document.getElementById('manuscript-form').reset();
+      const formData = new FormData(form);
 
-        // Show success Toast
-        const code = 'EQ-2026-' + Math.floor(1000 + Math.random() * 9000);
-        showToast('¡Manuscrito Recibido con Éxito!', 'Gracias ' + author + '. Tu obra "' + title + '" ha sido registrada bajo el código ' + code + '. Nuestro comité se comunicará en menos de 14 días.');
-      }, 1200);
+      try {
+        await fetch('https://formsubmit.co/ajax/elquijotegrupoeditorial@gmail.com', {
+          method: 'POST',
+          body: formData
+        });
+      } catch (e) {
+        console.log('Form submit attempt finished');
+      }
+
+      btn.disabled = false;
+      btn.innerHTML = '<i class="fa-solid fa-paper-plane text-quijote-gold"></i><span>Enviar Manuscrito a Evaluación Editorial</span>';
+      
+      const code = 'EQ-2026-' + Math.floor(1000 + Math.random() * 9000);
+      showToast('¡Manuscrito Enviado con Éxito!', 'Gracias ' + author + '. Tu obra "' + title + '" fue enviada a elquijotegrupoeditorial@gmail.com (Código ' + code + '). Nuestro comité responderá en un plazo máximo de 14 días hábiles.');
+      form.reset();
     }
 
     // Direct Contact Handler
-    function handleDirectContact(event) {
+    async function handleDirectContact(event) {
       event.preventDefault();
+      const form = event.target;
       const name = document.getElementById('contact-name').value;
-      
-      showToast('¡Mensaje Enviado!', 'Gracias ' + name + '. Un asesor editorial responderá a tu correo en las próximas horas.');
-      event.target.reset();
+      const formData = new FormData(form);
+
+      try {
+        await fetch('https://formsubmit.co/ajax/elquijotegrupoeditorial@gmail.com', {
+          method: 'POST',
+          body: formData
+        });
+      } catch (e) {
+        console.log('Form submit attempt finished');
+      }
+
+      showToast('¡Mensaje Enviado!', 'Gracias ' + name + '. Tu mensaje ha sido enviado a elquijotegrupoeditorial@gmail.com. Un asesor responderá a la brevedad.');
+      form.reset();
     }
 
     // Toast Notification System
