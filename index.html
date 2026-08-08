@@ -1319,29 +1319,46 @@
       event.preventDefault();
       const form = event.target;
       const btn = document.getElementById('btn-submit-manuscript');
-      const author = document.getElementById('ms-author').value;
-      const title = document.getElementById('ms-title').value;
+      const author = document.getElementById('ms-author')?.value || 'Autor';
+      const title = document.getElementById('ms-title')?.value || 'Manuscrito';
 
       // Disable button & show spinner
-      btn.disabled = true;
-      btn.innerHTML = '<i class="fa-solid fa-spinner animate-spin"></i><span>Enviando Manuscrito...</span>';
-
-      const formData = new FormData(form);
-
-      try {
-        await fetch('https://formsubmit.co/ajax/313e9b51809478b7790df0e0e45b104d', {
-          method: 'POST',
-          body: formData
-        });
-      } catch (e) {
-        console.log('Form submit attempt finished');
+      if (btn) {
+        btn.disabled = true;
+        btn.innerHTML = '<i class="fa-solid fa-spinner animate-spin"></i><span>Enviando Manuscrito...</span>';
       }
 
-      btn.disabled = false;
-      btn.innerHTML = '<i class="fa-solid fa-paper-plane text-quijote-gold"></i><span>Enviar Manuscrito a Evaluación Editorial</span>';
-      
+      // Construct FormData directly from form element to capture binary file attachment (attachment)
+      const formData = new FormData(form);
+
+      // Use FormSubmit AJAX endpoint URL
+      const endpoint = form.action.includes('/ajax/') 
+        ? form.action 
+        : form.action.replace('formsubmit.co/', 'formsubmit.co/ajax/');
+
+      try {
+        const response = await fetch(endpoint, {
+          method: 'POST',
+          headers: {
+            'Accept': 'application/json'
+          },
+          body: formData
+        });
+
+        if (!response.ok) {
+          console.warn('FormSubmit AJAX status:', response.status);
+        }
+      } catch (e) {
+        console.error('Error during manuscript submission:', e);
+      } finally {
+        if (btn) {
+          btn.disabled = false;
+          btn.innerHTML = '<i class="fa-solid fa-paper-plane text-quijote-gold"></i><span>Enviar Manuscrito a Evaluación Editorial</span>';
+        }
+      }
+
       const code = 'EQ-2026-' + Math.floor(1000 + Math.random() * 9000);
-      showToast('¡Manuscrito Enviado con Éxito!', 'Gracias ' + author + '. Tu obra "' + title + '" fue enviada a elquijotegrupoeditorial@gmail.com (Código ' + code + '). Nuestro comité responderá en un plazo máximo de 14 días hábiles.');
+      showToast('¡Manuscrito Enviado con Éxito!', 'Gracias ' + author + '. Tu obra "' + title + '" fue enviada a evaluación (Código ' + code + '). Nuestro comité responderá en un plazo máximo de 14 días hábiles.');
       form.reset();
     }
 
