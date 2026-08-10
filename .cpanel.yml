@@ -3,3 +3,5 @@ deployment:
   tasks:
     - export DEPLOYPATH=/home/elquijot/public_html/
     - /bin/rsync -rav --exclude='.git*' * $DEPLOYPATH
+    - /bin/mkdir -p $DEPLOYPATH/assets
+    - /bin/cp -rf public/assets/* $DEPLOYPATH/assets/ 2>/dev/null || true
